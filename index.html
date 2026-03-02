@@ -3,30 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edilse · Fajas de Alta Costura</title>
+  <title>Edilse · Fajas de Alta Costura Postquirúrgica</title>
   <style>
-    /* ESTILOS COMPLETAMENTE NUEVOS */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: #f8f4f0;
-      font-family: 'Georgia', serif;
+      background: #fff9f5;
+      font-family: 'Cormorant', 'Times New Roman', serif;
+      color: #2c1810;
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap');
+
+    /* NUEVA PALETA DE COLORES */
+    :root {
+      --terracota: #9b4b3a;
+      --ocre: #c69c6d;
+      --marfil: #fff9f0;
+      --chocolate: #3a2a1e;
+    }
+
+    /* HEADER NUEVO */
     header {
-      background: #5a3e2b;
-      padding: 1rem;
-      color: #d4af37;
+      background: var(--chocolate);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 5px solid var(--ocre);
     }
+
+    .logo {
+      color: var(--ocre);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .menu a {
+      color: var(--marfil);
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    /* HERO NUEVO */
     .hero {
-      background: #2c1e12;
-      color: white;
-      padding: 2rem;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1578496781985-452d4a934c3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center 30%;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      color: white;
     }
-    /* ... mucho más código nuevo ... */
+
+    .hero h1 {
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    .btn {
+      background: var(--ocre);
+      color: var(--chocolate);
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    /* SECCIONES */
+    .contenedor {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    /* TARJETAS */
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border: 1px solid var(--ocre);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--chocolate);
+      color: var(--marfil);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>ESTE ES UN CÓDIGO NUEVO - PRUEBA</h1>
-  <p>Si ves esto, el cambio funcionó</p>
+
+<header>
+  <div class="logo">EDILSE</div>
+  <ul class="menu">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</header>
+
+<section class="hero" id="inicio">
+  <div>
+    <h1>LA CLÍNICA DE LAS FAJAS EDI</h1>
+    <p>"La elegancia en cada curva"</p>
+    <a href="https://wa.me/573007245058" class="btn">📱 Contáctame por WhatsApp</a>
+  </div>
+</section>
+
+<section class="contenedor" id="sobre">
+  <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Sobre Edilse</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="color: var(--terracota);">25 años de experiencia</h3>
+      <p style="margin-top: 1rem;">Diseñadora latinoamericana especializada en fajas postquirúrgicas y cuidado de la piel. Más de 2500 mujeres han confiado en su trabajo.</p>
+    </div>
+    <div class="card">
+      <h3 style="color: var(--terracota);">Confección artesanal</h3>
+      <p style="margin-top: 1rem;">Cada faja es única, hecha a mano con materiales hipoalergénicos de la más alta calidad.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contenedor" id="servicios">
+  <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Servicios</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>🔹 Postquirúrgicas</h3>
+      <p>Para liposucción, abdominoplastia, cesáreas y más. Compresión adecuada y tejidos que cuidan.</p>
+    </div>
+    <div class="card">
+      <h3>🔹 Piel sensible</h3>
+      <p>Especiales para quemaduras, cicatrices y tratamientos dermatológicos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contenedor" id="contacto">
+  <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Contacto</h2>
+  <div class="grid-2">
+    <div class="card">
+      <p><strong>📍 Barrio Lleras, Calle 1a · Cúcuta</strong></p>
+      <p style="margin-top: 1rem;">📱 <a href="https://wa.me/573007245058">300 724 5058</a></p>
+      <p>📞 300 724 5058</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <p>¿Lista para tu transformación?</p>
+      <a href="https://wa.me/573007245058" class="btn" style="margin-top: 1rem;">📲 ESCRIBIR AHORA</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap;">
+    <div>
+      <p>© 2026 Edilse · Todos los derechos reservados</p>
+    </div>
+    <div>
+      <a href="https://wa.me/573244913371" style="color: var(--ocre);">💳 QUIERO MI TARJETA</a>
+    </div>
+    <div>
+      <p>Diseño NG · 📲 324 491 3371</p>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
