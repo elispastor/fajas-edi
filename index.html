@@ -15,6 +15,7 @@
       --vino: #722f37;
       --dorado: #b8860b;
       --crema: #fff9f0;
+      --gris: #f0eae3;
     }
 
     body {
@@ -174,11 +175,115 @@
       font-size: 1.2rem;
     }
 
+    /* CARRUSEL */
+    .carrusel-container {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      background: var(--vino);
+    }
+
+    .carrusel-slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carrusel-item {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carrusel-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carrusel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(114,47,55,0.95));
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .carrusel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--dorado);
+      color: var(--vino);
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 10;
+      opacity: 0.8;
+      border: 2px solid white;
+    }
+
+    .carrusel-control:hover {
+      opacity: 1;
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carrusel-prev {
+      left: 15px;
+    }
+
+    .carrusel-next {
+      right: 15px;
+    }
+
+    .carrusel-dots {
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      z-index: 10;
+      padding: 0 1rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 1px solid var(--dorado);
+    }
+
+    .dot:hover {
+      background: white;
+    }
+
+    .active-dot {
+      background: var(--dorado);
+      transform: scale(1.3);
+    }
+
     /* SECCIÓN EDILSA: FOTO GRANDE SIN BORDE */
     .seccion-edilsa {
       max-width: 1200px;
       margin: 0;
-      padding: 0;
+      padding: 0 1rem;
     }
 
     .edilsa-card {
@@ -387,9 +492,11 @@
     </div>
   </section>
 
-  <!-- CATÁLOGO -->
+  <!-- CATÁLOGO CON 38 FOTOS -->
   <section id="catalogo" class="seccion">
-    <h2>📸 Catálogo</h2>
+    <h2>📸 Nuestro catálogo</h2>
+    <p class="texto-centrado">38 diseños exclusivos</p>
+    
     <div class="carrusel-container">
       <div class="carrusel-slides" id="carruselSlides"></div>
       <button class="carrusel-control carrusel-prev" onclick="cambiarSlide(-1)">❮</button>
@@ -435,8 +542,15 @@
   <section class="seccion">
     <h2>💬 Asistente Virtual</h2>
     <div class="chat-container">
-      <div class="chat-header">...</div>
-      <div class="chat-mensajes" id="chatMensajes"></div>
+      <div class="chat-header">
+        <div class="chat-avatar">👩‍⚕️</div>
+        <div>
+          <h3 style="color: var(--vino);">¡Hola! Soy EDI</h3>
+        </div>
+      </div>
+      <div class="chat-mensajes" id="chatMensajes">
+        <p><strong>EDI:</strong> Pregunta lo que necesites</p>
+      </div>
       <div class="chat-control">
         <input type="text" id="chatInput" placeholder="Escribe...">
         <button onclick="enviarChat()">Enviar</button>
@@ -457,74 +571,142 @@
 
 <footer>
   <div class="footer-grid">
-    <div>© 2026 FAJAS EDI</div>
-    <div><a href="https://wa.me/573244913371">Diseño NG</a></div>
+    <div class="footer-derechos">
+      © 2026 FAJAS EDI · Todos los derechos reservados
+    </div>
+    <div class="footer-credits">
+      <a href="https://wa.me/573244913371">Diseño NG</a>
+    </div>
   </div>
 </footer>
 
-<!-- QR -->
-<section class="seccion-qr">
-  <h2>📲 Llévanos siempre</h2>
+<!-- SECCIÓN QR -->
+<section class="seccion-qr" id="qr">
+  <h2 style="color: var(--vino);">📲 Llévanos siempre</h2>
   <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://fajas-edi.netlify.app" class="qr-img">
+  <p>Escanea con tu celular</p>
   <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir QR</button>
 </section>
 
 <script>
-  // Menú, carrusel, chat... (todo igual, funcionando)
+  // Menú hamburguesa
   const hamburger = document.getElementById('hamburger');
   const menu = document.getElementById('menu');
   hamburger.addEventListener('click', () => menu.classList.toggle('mostrar'));
   document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('mostrar')));
 
   function compartirSite() {
-    if (navigator.share) navigator.share({title:'FAJAS EDI',url:window.location.href});
-    else alert('Comparte: '+window.location.href);
+    if (navigator.share) {
+      navigator.share({
+        title: 'FAJAS EDI',
+        url: window.location.href
+      });
+    } else {
+      alert('Comparte este enlace: ' + window.location.href);
+    }
   }
 
-  // Carrusel (38 fotos)
+  // CARRUSEL CON 38 FOTOS
   document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelector('.carrusel-slides');
-    const dots = document.getElementById('carruselDots');
-    for (let i=1; i<=38; i++) {
-      let div = document.createElement('div');
-      div.className = 'carrusel-item';
-      div.innerHTML = `<img src="./Foto (${i}).jpeg" class="carrusel-img" onerror="this.src='./portada.jpg'"><div class="carrusel-caption">Diseño ${i}</div>`;
-      slides.appendChild(div);
-      let span = document.createElement('span');
-      span.className = 'dot';
-      span.onclick = (function(n){ return function(){ irASlide(n); }; })(i-1);
-      dots.appendChild(span);
+    const slidesContainer = document.querySelector('.carrusel-slides');
+    const dotsContainer = document.getElementById('carruselDots');
+    const totalFotos = 38;
+    
+    slidesContainer.innerHTML = '';
+    dotsContainer.innerHTML = '';
+    
+    for (let i = 1; i <= totalFotos; i++) {
+      // Slide
+      const slideDiv = document.createElement('div');
+      slideDiv.className = 'carrusel-item';
+      
+      const img = document.createElement('img');
+      img.src = `./Foto (${i}).jpeg`;
+      img.alt = `Diseño exclusivo ${i}`;
+      img.className = 'carrusel-img';
+      img.onerror = function() { 
+        this.src = `./foto (${i}).jpeg`;
+        this.onerror = function() { 
+          this.src = './portada.jpg'; 
+        };
+      };
+      
+      const caption = document.createElement('div');
+      caption.className = 'carrusel-caption';
+      caption.textContent = `Diseño exclusivo ${i}`;
+      
+      slideDiv.appendChild(img);
+      slideDiv.appendChild(caption);
+      slidesContainer.appendChild(slideDiv);
+      
+      // Dot
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.setAttribute('onclick', `irASlide(${i-1})`);
+      dotsContainer.appendChild(dot);
     }
-    slidesData = document.querySelectorAll('.carrusel-item');
-    dotsData = document.querySelectorAll('.dot');
+    
+    slides = document.querySelectorAll('.carrusel-item');
+    dots = document.querySelectorAll('.dot');
+    
     mostrarSlide(0);
-    setInterval(() => cambiarSlide(1), 4000);
+    
+    setInterval(() => {
+      cambiarSlide(1);
+    }, 4000);
   });
 
-  let slideIndex = 0, slidesData = [], dotsData = [];
-  function mostrarSlide(n) {
-    if (n>=slidesData.length) slideIndex=0;
-    else if (n<0) slideIndex=slidesData.length-1;
-    else slideIndex=n;
-    document.querySelector('.carrusel-slides').style.transform = `translateX(-${slideIndex*100}%)`;
-    dotsData.forEach(d => d.classList.remove('active-dot'));
-    dotsData[slideIndex].classList.add('active-dot');
-  }
-  function cambiarSlide(d) { mostrarSlide(slideIndex+d); }
-  function irASlide(n) { mostrarSlide(n); }
+  let slideIndex = 0;
+  let slides = [];
+  let dots = [];
 
-  // Chat
-  const chat = document.getElementById('chatMensajes'), inp = document.getElementById('chatInput');
-  function agregarMensaje(q,t) { let p = document.createElement('p'); p.innerHTML = `<strong>${q}:</strong> ${t}`; chat.appendChild(p); chat.scrollTop = chat.scrollHeight; }
+  function mostrarSlide(n) {
+    if (n >= slides.length) slideIndex = 0;
+    if (n < 0) slideIndex = slides.length - 1;
+    else slideIndex = n;
+    
+    document.querySelector('.carrusel-slides').style.transform = `translateX(-${slideIndex * 100}%)`;
+    
+    dots.forEach(dot => dot.classList.remove('active-dot'));
+    dots[slideIndex].classList.add('active-dot');
+  }
+
+  function cambiarSlide(direccion) {
+    let nuevoIndex = slideIndex + direccion;
+    if (nuevoIndex >= slides.length) nuevoIndex = 0;
+    if (nuevoIndex < 0) nuevoIndex = slides.length - 1;
+    mostrarSlide(nuevoIndex);
+  }
+
+  function irASlide(n) {
+    mostrarSlide(n);
+  }
+
+  // CHAT
+  const chatMensajes = document.getElementById('chatMensajes');
+  const chatInput = document.getElementById('chatInput');
+
+  function agregarMensaje(quien, texto) {
+    const p = document.createElement('p');
+    p.innerHTML = `<strong>${quien}:</strong> ${texto}`;
+    chatMensajes.appendChild(p);
+    chatMensajes.scrollTop = chatMensajes.scrollHeight;
+  }
+
   function enviarChat() {
-    let p = inp.value.trim(); if(!p) return;
-    agregarMensaje('Tú', p); inp.value = '';
+    const pregunta = chatInput.value.trim();
+    if (!pregunta) return;
+    agregarMensaje('Tú', pregunta);
+    chatInput.value = '';
+
     setTimeout(() => {
-      let r = '';
-      if(p.includes('hola')) r='¡Hola! ¿En qué puedo ayudarte?';
-      else if(p.includes('precio')) r='Desde $250.000';
-      else r='¿Me escribes por WhatsApp?';
-      agregarMensaje('EDI', r);
+      let respuesta = '';
+      const p = pregunta.toLowerCase();
+      if (p.includes('hola') || p.includes('buenas')) respuesta = '¡Hola! ¿En qué puedo ayudarte?';
+      else if (p.includes('precio') || p.includes('cuesta')) respuesta = 'Desde $250.000. Escríbeme al WhatsApp.';
+      else if (p.includes('envío') || p.includes('envios')) respuesta = 'Sí, enviamos a toda Latinoamérica.';
+      else respuesta = 'Para más detalle, ¿me escribes por WhatsApp?';
+      agregarMensaje('EDI', respuesta);
     }, 800);
   }
 </script>
