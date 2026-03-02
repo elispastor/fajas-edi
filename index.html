@@ -119,7 +119,7 @@
       padding: 0 1rem;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
@@ -143,6 +143,16 @@
       color: var(--vino);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn-facebook {
+      background: #4267B2;
+      border-color: white;
+    }
+
+    .btn-facebook:hover {
+      background: white;
+      color: #4267B2;
     }
 
     .hero {
@@ -183,7 +193,6 @@
       margin-bottom: 1rem;
     }
 
-    /* CARRUSEL */
     .carrusel-container {
       position: relative;
       max-width: 900px;
@@ -287,57 +296,56 @@
       transform: scale(1.3);
     }
 
-    /* SECCIÓN DE LA SEÑORA COSIENDO (CORREGIDA) */
-    .seccion-cosiendo {
+    /* SECCIÓN DE EDILSA (CORREGIDA, SIN ESPACIOS EXTRA) */
+    .seccion-edilsa {
       max-width: 1200px;
-      margin: 4rem auto;
+      margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    .cosiendo-card {
+    .edilsa-card {
       background: linear-gradient(135deg, var(--vino) 0%, #5a2a30 100%);
       border-radius: 40px;
-      padding: 3rem 2rem;
+      padding: 1.5rem 2rem;
       border: 3px solid var(--dorado);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 3rem;
+      gap: 2rem;
       flex-wrap: wrap;
     }
 
-    .cosiendo-img {
-      flex: 1 1 300px;
+    .edilsa-img {
+      flex: 1 1 280px;
       text-align: center;
     }
 
-    .cosiendo-img img {
+    .edilsa-img img {
       max-width: 100%;
       height: auto;
-      max-height: 400px;
+      max-height: 380px;
       border-radius: 20px;
       border: 3px solid var(--dorado);
       object-fit: cover;
+      display: block;
     }
 
-    .cosiendo-texto {
-      flex: 1 1 300px;
+    .edilsa-texto {
+      flex: 1 1 280px;
       color: white;
       text-align: left;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
     }
 
-    .cosiendo-texto h3 {
+    .edilsa-texto h3 {
       color: var(--dorado);
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
     }
 
-    .cosiendo-texto p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      max-width: 100%;
+    .edilsa-texto p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 0;
     }
 
     .seccion {
@@ -534,7 +542,6 @@
       text-decoration: none;
     }
 
-    /* SECCIÓN QR PARA IMPRIMIR */
     .seccion-qr {
       max-width: 600px;
       margin: 4rem auto;
@@ -585,11 +592,11 @@
       .testimonios-grid {
         grid-template-columns: 1fr;
       }
-      .cosiendo-card {
+      .edilsa-card {
         flex-direction: column;
         text-align: center;
       }
-      .cosiendo-texto {
+      .edilsa-texto {
         text-align: center;
       }
       .carrusel-img {
@@ -609,7 +616,7 @@
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#testimonios">Testimonios</a></li>
       <li><a href="#catalogo">Catálogo</a></li>
-      <li><a href="#cosiendo">El arte de coser</a></li>
+      <li><a href="#edilsa">El arte de coser</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="https://wa.me/573244913371?text=Hola,%20quiero%20mi%20tarjeta%20como%20FAJAS%20EDI" class="btn-tarjeta-menu">💳 QUIERO MI TARJETA</a></li>
     </ul>
@@ -621,6 +628,7 @@
   <a href="tel:+573007245058" class="btn-personalizado">📞 Llamar</a>
   <a href="#" onclick="compartirSite(); return false;" class="btn-personalizado">📢 Compartir</a>
   <a href="https://wa.me/573244913371?text=Hola,%20quiero%20mi%20tarjeta%20como%20FAJAS%20EDI" class="btn-personalizado">💳 QUIERO MI TARJETA</a>
+  <a href="https://www.facebook.com/la.clinica.de.las.fajas.Edi" target="_blank" class="btn-personalizado btn-facebook">📘 Facebook (864 seguidores)</a>
 </div>
 
 <main id="inicio">
@@ -646,14 +654,15 @@
     </div>
   </section>
 
-  <section id="cosiendo" class="seccion-cosiendo">
-    <div class="cosiendo-card">
-      <div class="cosiendo-img">
-        <img src="./cociendo.jpg" alt="Edilse confeccionando fajas a mano">
+  <!-- SECCIÓN DE EDILSA (CORREGIDA, SIN ESPACIOS) -->
+  <section id="edilsa" class="seccion-edilsa">
+    <div class="edilsa-card">
+      <div class="edilsa-img">
+        <img src="./cociendo.jpg" alt="Edilsa confeccionando fajas a mano">
       </div>
-      <div class="cosiendo-texto">
+      <div class="edilsa-texto">
         <h3>✂️ Hecho a mano con amor</h3>
-        <p>Cada faja es confeccionada personalmente por Edilse, garantizando calidad, atención al detalle y el cariño que solo un trabajo artesanal puede ofrecer. Más de 25 años de experiencia respaldan cada puntada.</p>
+        <p>Cada faja es confeccionada personalmente por Edilsa, garantizando calidad, atención al detalle y el cariño que solo un trabajo artesanal puede ofrecer. Más de 25 años de experiencia respaldan cada puntada.</p>
       </div>
     </div>
   </section>
@@ -679,7 +688,7 @@
     <h2>Lo que dicen nuestras clientas</h2>
     <div class="testimonios-grid">
       <div class="testimonio-card">
-        <p>"Después de mi cesárea, la faja de Edilse fue mi mejor aliada. Recuperé mi figura y mi confianza."</p>
+        <p>"Después de mi cesárea, la faja de Edilsa fue mi mejor aliada. Recuperé mi figura y mi confianza."</p>
         <p class="cliente">— María G.</p>
       </div>
       <div class="testimonio-card">
@@ -687,7 +696,7 @@
         <p class="cliente">— Ana L.</p>
       </div>
       <div class="testimonio-card">
-        <p>"La atención personalizada de Edilse hace la diferencia. Me guió en todo el proceso."</p>
+        <p>"La atención personalizada de Edilsa hace la diferencia. Me guió en todo el proceso."</p>
         <p class="cliente">— Carmen R.</p>
       </div>
     </div>
@@ -732,7 +741,7 @@
   </div>
 </footer>
 
-<!-- SECCIÓN QR PARA IMPRIMIR -->
+<!-- SECCIÓN QR -->
 <section class="seccion-qr" id="qr">
   <h2 style="color: var(--vino);">📲 Escaneá y llevá el catálogo siempre con vos</h2>
   <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://fajas-edi.netlify.app" alt="QR de Fajas EDI" class="qr-img">
