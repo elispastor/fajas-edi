@@ -296,61 +296,56 @@
       transform: scale(1.3);
     }
 
-    /* SECCIÓN DE EDILSA (SIN ESPACIOS EXTRA) */
-.seccion-edilsa {
-  max-width: 1200px;
-  margin: 1rem auto;
-  padding: 0 1rem;
-}
+    /* SECCIÓN DE EDILSA (CORREGIDA, SIN ESPACIOS) */
+    .seccion-edilsa {
+      max-width: 1200px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
 
-.edilsa-card {
-  background: linear-gradient(135deg, var(--vino) 0%, #5a2a30 100%);
-  border-radius: 40px;
-  padding: 1rem 2rem;
-  border: 3px solid var(--dorado);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
+    .edilsa-card {
+      background: linear-gradient(135deg, var(--vino) 0%, #5a2a30 100%);
+      border-radius: 40px;
+      padding: 0.8rem 1.5rem;
+      border: 3px solid var(--dorado);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
 
-.edilsa-img {
-  flex: 1 1 280px;
-  text-align: center;
-}
+    .edilsa-img {
+      flex: 1 1 250px;
+      text-align: center;
+    }
 
-.edilsa-img img {
-  max-width: 100%;
-  height: auto;
-  max-height: 350px;
-  border-radius: 20px;
-  border: 3px solid var(--dorado);
-  object-fit: cover;
-  display: block;
-}
+    .edilsa-img img {
+      max-width: 100%;
+      height: auto;
+      max-height: 280px;
+      border-radius: 20px;
+      border: 3px solid var(--dorado);
+      object-fit: cover;
+      display: block;
+      margin-bottom: 0;
+    }
 
-.edilsa-texto {
-  flex: 1 1 280px;
-  color: white;
-  text-align: left;
-}
+    .edilsa-texto {
+      flex: 1 1 280px;
+      color: white;
+      text-align: left;
+    }
 
-.edilsa-texto h3 {
-  color: var(--dorado);
-  font-size: 2.2rem;
-  margin-bottom: 0.2rem;
-}
-
-.edilsa-texto p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 0;
-}
+    .edilsa-texto h3 {
+      color: var(--dorado);
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
 
     .edilsa-texto p {
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.4;
       margin-bottom: 0;
     }
 
@@ -638,16 +633,19 @@
 </div>
 
 <main id="inicio">
+  <!-- PORTADA CON MODELO -->
   <section class="hero">
     <div class="hero-card">
       <img src="./portada.jpg" alt="Mujer con faja postquirúrgica - Fajas Edi" class="hero-img">
       <div class="hero-content">
-        <h1>ALTA CONFECCIÓN EN<br>FAJAS A LA MEDIDA</h1>
-        <h2>Especialistas en diseño postquirúrgico y cuidado avanzado de la piel</h2>
+        <h1>¡Bienvenidas a nuestro sitio web!</h1>
+        <h2>ALTA CONFECCIÓN EN FAJAS A LA MEDIDA</h2>
+        <p>Especialistas en diseño postquirúrgico y cuidado avanzado de la piel</p>
       </div>
     </div>
   </section>
 
+  <!-- CATÁLOGO CON 38 FOTOS -->
   <section id="catalogo" class="seccion">
     <h2>📸 Nuestro catálogo</h2>
     <p class="texto-centrado">38 diseños exclusivos creados para realzar tu belleza</p>
@@ -775,7 +773,6 @@
     }
   }
 
-  // CARRUSEL
   document.addEventListener('DOMContentLoaded', function() {
     const slidesContainer = document.querySelector('.carrusel-slides');
     const dotsContainer = document.getElementById('carruselDots');
@@ -849,7 +846,6 @@
     mostrarSlide(n);
   }
 
-  // CHAT
   const chatMensajes = document.getElementById('chatMensajes');
   const chatInput = document.getElementById('chatInput');
 
