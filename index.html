@@ -22,6 +22,7 @@
       font-family: 'Montserrat', sans-serif;
       background: var(--crema);
       color: #2c2c2c;
+      scroll-behavior: smooth;
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
@@ -63,16 +64,33 @@
       display: flex;
       list-style: none;
       gap: 2rem;
+      align-items: center;
     }
 
     .menu a {
       color: white;
       text-decoration: none;
       font-weight: 500;
+      transition: color 0.3s;
     }
 
     .menu a:hover {
       color: var(--dorado);
+    }
+
+    /* Botón QUIERO MI TARJETA en el menú (sutil pero visible) */
+    .menu .btn-tarjeta-menu {
+      background: var(--dorado);
+      color: var(--vino);
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      border: 1px solid white;
+    }
+
+    .menu .btn-tarjeta-menu:hover {
+      background: white;
+      color: var(--vino);
     }
 
     .hamburger {
@@ -82,6 +100,31 @@
       border: none;
       color: white;
       cursor: pointer;
+    }
+
+    /* Botón compartir flotante */
+    .compartir-flotante {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--dorado);
+      color: var(--vino);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 99;
+      border: 2px solid white;
+      transition: transform 0.3s;
+    }
+
+    .compartir-flotante:hover {
+      transform: scale(1.1);
     }
 
     .hero {
@@ -138,6 +181,12 @@
       display: inline-block;
       border: 2px solid var(--dorado);
       font-size: 1.1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
     .seccion {
@@ -192,6 +241,120 @@
       font-style: italic;
     }
 
+    /* TESTIMONIOS */
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .testimonio-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-left: 5px solid var(--dorado);
+    }
+
+    .testimonio-card p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .testimonio-card .cliente {
+      color: var(--vino);
+      font-weight: 600;
+    }
+
+    /* GALERÍA */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 3rem 0;
+    }
+
+    .galeria-item {
+      background: var(--gris);
+      border-radius: 15px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      border: 2px solid var(--dorado);
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* CHAT BOT */
+    .chat-container {
+      background: white;
+      border-radius: 30px;
+      padding: 2rem;
+      border: 2px solid var(--vino);
+      margin: 3rem 0;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chat-avatar {
+      width: 50px;
+      height: 50px;
+      background: var(--vino);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dorado);
+      font-size: 1.5rem;
+      border: 2px solid var(--dorado);
+    }
+
+    .chat-mensajes {
+      background: var(--gris);
+      border-radius: 20px;
+      padding: 1.5rem;
+      min-height: 150px;
+      margin-bottom: 1.5rem;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .chat-control {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .chat-control input {
+      flex: 1;
+      padding: 1rem;
+      border: 2px solid var(--dorado);
+      border-radius: 50px;
+    }
+
+    .chat-control button {
+      background: var(--vino);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .chat-control button:hover {
+      background: #8a3a44;
+    }
+
     .contacto-box {
       background: var(--vino);
       color: white;
@@ -237,16 +400,6 @@
       border-top: 1px solid var(--dorado);
     }
 
-    .btn-tarjeta {
-      background: var(--dorado);
-      color: var(--vino);
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-    }
-
     @media (max-width: 768px) {
       .menu {
         display: none;
@@ -267,6 +420,9 @@
       .hero-content h1 { font-size: 2rem; }
       .hero-content h2 { font-size: 1.5rem; }
       .contacto-box .telefono { font-size: 1.8rem; }
+      .testimonios-grid, .galeria-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -279,16 +435,23 @@
     <ul class="menu" id="menu">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#galeria">Galería</a></li>
       <li><a href="#contacto">Contacto</a></li>
+      <li><a href="https://wa.me/573244913371?text=Hola,%20quiero%20mi%20tarjeta%20como%20FAJAS%20EDI" class="btn-tarjeta-menu">💳 QUIERO MI TARJETA</a></li>
     </ul>
   </div>
 </header>
 
+<!-- Botón flotante para compartir -->
+<div class="compartir-flotante" onclick="compartirSite()" title="Compartir este sitio">
+  📢
+</div>
+
 <main id="inicio">
   <section class="hero">
     <div class="hero-card">
-      <!-- IMAGEN DE PORTADA: portada.jpg (debe estar en la misma carpeta) -->
-      <img src="portada.jpg" alt="Mujer con faja postquirúrgica - Fajas Edi" class="hero-img">
+      <img src="./portada.jpg" alt="Mujer con faja postquirúrgica - Fajas Edi" class="hero-img">
       <div class="hero-content">
         <h1>ALTA CONFECCIÓN EN<br>FAJAS A LA MEDIDA</h1>
         <h2>Especialistas en diseño postquirúrgico y cuidado avanzado de la piel</h2>
@@ -314,6 +477,54 @@
     </div>
   </section>
 
+  <section id="testimonios" class="seccion">
+    <h2>Lo que dicen nuestras clientas</h2>
+    <div class="testimonios-grid">
+      <div class="testimonio-card">
+        <p>"Después de mi cesárea, la faja de Edilse fue mi mejor aliada. Recuperé mi figura y mi confianza."</p>
+        <p class="cliente">— María G.</p>
+      </div>
+      <div class="testimonio-card">
+        <p>"Diseño impecable, materiales de primera. Uso mis fajas a diario y son una maravilla."</p>
+        <p class="cliente">— Ana L.</p>
+      </div>
+      <div class="testimonio-card">
+        <p>"La atención personalizada de Edilse hace la diferencia. Me guió en todo el proceso."</p>
+        <p class="cliente">— Carmen R.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="seccion">
+    <h2>Galería de resultados</h2>
+    <div class="galeria-grid">
+      <div class="galeria-item" style="background: #ddd;">📸</div>
+      <div class="galeria-item" style="background: #ddd;">📸</div>
+      <div class="galeria-item" style="background: #ddd;">📸</div>
+      <div class="galeria-item" style="background: #ddd;">📸</div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>💬 Asistente Virtual EDI</h2>
+    <div class="chat-container">
+      <div class="chat-header">
+        <div class="chat-avatar">👩‍⚕️</div>
+        <div>
+          <h3 style="color: var(--vino);">¡Hola! Soy EDI, tu asistente virtual</h3>
+          <p style="color: #666;">¿En qué puedo ayudarte hoy?</p>
+        </div>
+      </div>
+      <div class="chat-mensajes" id="chatMensajes">
+        <p><strong>EDI:</strong> ¡Bienvenida! Puedo responder tus dudas sobre fajas, postoperatorios, envíos y más.</p>
+      </div>
+      <div class="chat-control">
+        <input type="text" id="chatInput" placeholder="Escribe tu pregunta...">
+        <button onclick="enviarChat()">Enviar</button>
+      </div>
+    </div>
+  </section>
+
   <section id="contacto" class="seccion">
     <div class="contacto-box">
       <h3>Agenda tu asesoría personalizada</h3>
@@ -330,7 +541,8 @@
       <p>La elegancia en cada curva</p>
     </div>
     <div style="text-align: right;">
-      <a href="https://wa.me/573244913371?text=Hola,%20quiero%20mi%20tarjeta%20como%20FAJAS%20EDI" class="btn-tarjeta">💳 QUIERO MI TARJETA</a>
+      <p>📍 Barrio Lleras, Calle 1a · Cúcuta</p>
+      <p>📱 300 724 5058</p>
     </div>
     <div class="footer-credits">
       <p>✨ Diseño NG · <a href="https://wa.me/573244913371" style="color: var(--dorado);">Contáctame para tu tarjeta digital</a></p>
@@ -344,6 +556,46 @@
   const menu = document.getElementById('menu');
   hamburger.addEventListener('click', () => menu.classList.toggle('mostrar'));
   document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('mostrar')));
+
+  function compartirSite() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'FAJAS EDI',
+        text: 'La elegancia en cada curva - Fajas postquirúrgicas de alta confección',
+        url: window.location.href
+      });
+    } else {
+      alert('¡Comparte este enlace: ' + window.location.href);
+    }
+  }
+
+  const chatMensajes = document.getElementById('chatMensajes');
+  const chatInput = document.getElementById('chatInput');
+
+  function agregarMensaje(quien, texto) {
+    const p = document.createElement('p');
+    p.innerHTML = `<strong>${quien}:</strong> ${texto}`;
+    chatMensajes.appendChild(p);
+    chatMensajes.scrollTop = chatMensajes.scrollHeight;
+  }
+
+  function enviarChat() {
+    const pregunta = chatInput.value.trim();
+    if (!pregunta) return;
+    agregarMensaje('Tú', pregunta);
+    chatInput.value = '';
+
+    setTimeout(() => {
+      let respuesta = '';
+      const p = pregunta.toLowerCase();
+      if (p.includes('hola') || p.includes('buenas')) respuesta = '¡Hola! Encantada de saludarte. ¿En qué puedo ayudarte?';
+      else if (p.includes('cesárea') || p.includes('cesarea')) respuesta = 'Para cesárea tenemos fajas postquirúrgicas con compresión media. Debes usarla de 4 a 6 semanas. ¿Quieres que te asesore?';
+      else if (p.includes('precio') || p.includes('cuesta')) respuesta = 'Nuestras fajas personalizadas desde $250.000. Escríbeme al WhatsApp para presupuesto exacto.';
+      else if (p.includes('envío') || p.includes('envios')) respuesta = 'Sí, enviamos a todo Colombia y Latinoamérica. El costo depende del país.';
+      else respuesta = 'Gracias por tu pregunta. Para más detalle, ¿me escribes por WhatsApp?';
+      agregarMensaje('EDI', respuesta);
+    }, 800);
+  }
 </script>
 
 </body>
