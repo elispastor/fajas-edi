@@ -183,43 +183,153 @@
       margin-bottom: 1rem;
     }
 
-    /* NUEVA SECCIÓN PARA LA MODELO */
-    .seccion-modelo {
+    /* CARRUSEL PARA 38 FOTOS */
+    .carrusel-container {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      background: var(--vino);
+    }
+
+    .carrusel-slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carrusel-item {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carrusel-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carrusel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(114,47,55,0.95));
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .carrusel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--dorado);
+      color: var(--vino);
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 10;
+      opacity: 0.8;
+      border: 2px solid white;
+    }
+
+    .carrusel-control:hover {
+      opacity: 1;
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carrusel-prev {
+      left: 15px;
+    }
+
+    .carrusel-next {
+      right: 15px;
+    }
+
+    .carrusel-dots {
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      z-index: 10;
+      padding: 0 1rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 1px solid var(--dorado);
+    }
+
+    .dot:hover {
+      background: white;
+    }
+
+    .active-dot {
+      background: var(--dorado);
+      transform: scale(1.3);
+    }
+
+    /* SECCIÓN DE LA SEÑORA COSIENDO */
+    .seccion-cosiendo {
       max-width: 1200px;
       margin: 4rem auto;
       padding: 0 1rem;
     }
 
-    .modelo-card {
+    .cosiendo-card {
       background: linear-gradient(135deg, var(--vino) 0%, #5a2a30 100%);
       border-radius: 40px;
-      overflow: hidden;
+      padding: 3rem 2rem;
       border: 3px solid var(--dorado);
-      padding: 2rem;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
     }
 
-    .modelo-card h3 {
-      color: var(--dorado);
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
+    .cosiendo-img {
+      flex: 1;
+      min-width: 300px;
     }
 
-    .modelo-img {
+    .cosiendo-img img {
       width: 100%;
-      max-width: 500px;
-      height: auto;
       border-radius: 20px;
       border: 3px solid var(--dorado);
-      margin: 0 auto 1.5rem;
-      display: block;
     }
 
-    .modelo-card p {
+    .cosiendo-texto {
+      flex: 1;
       color: white;
+    }
+
+    .cosiendo-texto h3 {
+      color: var(--dorado);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cosiendo-texto p {
       font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
+      line-height: 1.8;
     }
 
     .seccion {
@@ -431,6 +541,13 @@
       .testimonios-grid {
         grid-template-columns: 1fr;
       }
+      .cosiendo-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .carrusel-img {
+        height: 350px;
+      }
     }
   </style>
 </head>
@@ -444,7 +561,8 @@
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#testimonios">Testimonios</a></li>
-      <li><a href="#modelo">Nuestra Modelo</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#cosiendo">El arte de coser</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="https://wa.me/573244913371?text=Hola,%20quiero%20mi%20tarjeta%20como%20FAJAS%20EDI" class="btn-tarjeta-menu">💳 QUIERO MI TARJETA</a></li>
     </ul>
@@ -469,12 +587,29 @@
     </div>
   </section>
 
-  <!-- NUEVA SECCIÓN DE LA MODELO -->
-  <section id="modelo" class="seccion-modelo">
-    <div class="modelo-card">
-      <h3>Nuestra modelo exclusiva</h3>
-      <img src="./modelo.jpg" alt="Modelo con faja postquirúrgica Fajas Edi" class="modelo-img">
-      <p>Diseños que realzan la belleza natural de cada mujer. Confeccionados con los más altos estándares de calidad.</p>
+  <!-- CARRUSEL DE 38 FOTOS -->
+  <section id="catalogo" class="seccion">
+    <h2>📸 Nuestro catálogo</h2>
+    <p class="texto-centrado">38 diseños exclusivos creados para realzar tu belleza</p>
+    
+    <div class="carrusel-container">
+      <div class="carrusel-slides" id="carruselSlides"></div>
+      <button class="carrusel-control carrusel-prev" onclick="cambiarSlide(-1)">❮</button>
+      <button class="carrusel-control carrusel-next" onclick="cambiarSlide(1)">❯</button>
+      <div class="carrusel-dots" id="carruselDots"></div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE LA DOÑA COSIENDO -->
+  <section id="cosiendo" class="seccion-cosiendo">
+    <div class="cosiendo-card">
+      <div class="cosiendo-img">
+        <img src="./cociendo.jpg" alt="Edilse confeccionando fajas a mano">
+      </div>
+      <div class="cosiendo-texto">
+        <h3>✂️ Hecho a mano con amor</h3>
+        <p>Cada faja es confeccionada personalmente por Edilse, garantizando calidad, atención al detalle y el cariño que solo un trabajo artesanal puede ofrecer. Más de 25 años de experiencia respaldan cada puntada.</p>
+      </div>
     </div>
   </section>
 
@@ -559,11 +694,13 @@
 </footer>
 
 <script>
+  // Menú hamburguesa
   const hamburger = document.getElementById('hamburger');
   const menu = document.getElementById('menu');
   hamburger.addEventListener('click', () => menu.classList.toggle('mostrar'));
   document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('mostrar')));
 
+  // Compartir
   function compartirSite() {
     if (navigator.share) {
       navigator.share({
@@ -578,6 +715,86 @@
     }
   }
 
+  // CARRUSEL AUTOMÁTICO PARA 38 FOTOS (con extensión .jpeg)
+  document.addEventListener('DOMContentLoaded', function() {
+    const slidesContainer = document.querySelector('.carrusel-slides');
+    const dotsContainer = document.getElementById('carruselDots');
+    const totalFotos = 38;
+    
+    slidesContainer.innerHTML = '';
+    dotsContainer.innerHTML = '';
+    
+    for (let i = 1; i <= totalFotos; i++) {
+      // Slide
+      const slideDiv = document.createElement('div');
+      slideDiv.className = 'carrusel-item';
+      
+      const img = document.createElement('img');
+      // Intenta con mayúscula "Foto" y minúscula "foto"
+      img.src = `./Foto (${i}).jpeg`;
+      img.alt = `Diseño exclusivo ${i}`;
+      img.className = 'carrusel-img';
+      img.onerror = function() { 
+        // Si falla, prueba con minúscula
+        this.src = `./foto (${i}).jpeg`;
+        this.onerror = function() { 
+          // Si aún falla, muestra portada
+          this.src = './portada.jpg'; 
+        };
+      };
+      
+      const caption = document.createElement('div');
+      caption.className = 'carrusel-caption';
+      caption.textContent = `Diseño exclusivo ${i} - Consulte disponibilidad`;
+      
+      slideDiv.appendChild(img);
+      slideDiv.appendChild(caption);
+      slidesContainer.appendChild(slideDiv);
+      
+      // Dot
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.setAttribute('onclick', `irASlide(${i-1})`);
+      dotsContainer.appendChild(dot);
+    }
+    
+    slides = document.querySelectorAll('.carrusel-item');
+    dots = document.querySelectorAll('.dot');
+    
+    mostrarSlide(0);
+    
+    setInterval(() => {
+      cambiarSlide(1);
+    }, 4000);
+  });
+
+  let slideIndex = 0;
+  let slides = [];
+  let dots = [];
+
+  function mostrarSlide(n) {
+    if (n >= slides.length) slideIndex = 0;
+    if (n < 0) slideIndex = slides.length - 1;
+    else slideIndex = n;
+    
+    document.querySelector('.carrusel-slides').style.transform = `translateX(-${slideIndex * 100}%)`;
+    
+    dots.forEach(dot => dot.classList.remove('active-dot'));
+    dots[slideIndex].classList.add('active-dot');
+  }
+
+  function cambiarSlide(direccion) {
+    let nuevoIndex = slideIndex + direccion;
+    if (nuevoIndex >= slides.length) nuevoIndex = 0;
+    if (nuevoIndex < 0) nuevoIndex = slides.length - 1;
+    mostrarSlide(nuevoIndex);
+  }
+
+  function irASlide(n) {
+    mostrarSlide(n);
+  }
+
+  // CHAT
   const chatMensajes = document.getElementById('chatMensajes');
   const chatInput = document.getElementById('chatInput');
 
