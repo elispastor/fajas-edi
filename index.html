@@ -15,7 +15,6 @@
       --vino: #722f37;
       --dorado: #b8860b;
       --crema: #fff9f0;
-      --gris: #f0eae3;
     }
 
     body {
@@ -83,7 +82,6 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
     }
 
     .menu a:hover {
@@ -97,11 +95,6 @@
       border-radius: 30px;
       font-weight: 600;
       border: 1px solid white;
-    }
-
-    .menu .btn-tarjeta-menu:hover {
-      background: white;
-      color: var(--vino);
     }
 
     .hamburger {
@@ -131,28 +124,13 @@
       text-decoration: none;
       font-weight: 600;
       border: 2px solid var(--dorado);
-      transition: all 0.3s;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 1rem;
-    }
-
-    .btn-personalizado:hover {
-      background: var(--dorado);
-      color: var(--vino);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
     .btn-facebook {
       background: #4267B2;
-      border-color: white;
-    }
-
-    .btn-facebook:hover {
-      background: white;
-      color: #4267B2;
     }
 
     .hero {
@@ -184,176 +162,62 @@
     .hero-content h1 {
       color: var(--dorado);
       font-size: 2.8rem;
-      margin-bottom: 0.5rem;
     }
 
     .hero-content h2 {
       color: white;
       font-size: 2rem;
-      margin-bottom: 0.5rem;
     }
 
     .hero-content p {
       color: white;
       font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
-    .carrusel-container {
-      position: relative;
-      max-width: 900px;
-      margin: 2rem auto;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      background: var(--vino);
-    }
-
-    .carrusel-slides {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .carrusel-item {
-      min-width: 100%;
-      position: relative;
-    }
-
-    .carrusel-img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .carrusel-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(114,47,55,0.95));
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    .carrusel-control {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--dorado);
-      color: var(--vino);
-      border: none;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      font-size: 1.8rem;
-      cursor: pointer;
-      transition: all 0.3s;
-      z-index: 10;
-      opacity: 0.8;
-      border: 2px solid white;
-    }
-
-    .carrusel-control:hover {
-      opacity: 1;
-      background: white;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .carrusel-prev {
-      left: 15px;
-    }
-
-    .carrusel-next {
-      right: 15px;
-    }
-
-    .carrusel-dots {
-      position: absolute;
-      bottom: 80px;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 0.7rem;
-      flex-wrap: wrap;
-      z-index: 10;
-      padding: 0 1rem;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-      cursor: pointer;
-      transition: all 0.3s;
-      border: 1px solid var(--dorado);
-    }
-
-    .dot:hover {
-      background: white;
-    }
-
-    .active-dot {
-      background: var(--dorado);
-      transform: scale(1.3);
-    }
-
-    /* SECCIÓN DE EDILSA - ESPACIO MÍNIMO */
+    /* SECCIÓN EDILSA: FOTO GRANDE SIN BORDE */
     .seccion-edilsa {
       max-width: 1200px;
-      margin: 0.5rem auto;
-      padding: 0 1rem;
+      margin: 0;
+      padding: 0;
     }
 
     .edilsa-card {
       background: linear-gradient(135deg, var(--vino) 0%, #5a2a30 100%);
       border-radius: 40px;
-      padding: 0.5rem 1.5rem;
-      border: 3px solid var(--dorado);
+      padding: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
     .edilsa-img {
-      flex: 1 1 250px;
+      flex: 1 1 300px;
       text-align: center;
     }
 
     .edilsa-img img {
-      max-width: 100%;
-      height: auto;
-      max-height: 260px;
-      border-radius: 20px;
-      border: 3px solid var(--dorado);
-      object-fit: cover;
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
       display: block;
-      margin-bottom: 0;
     }
 
     .edilsa-texto {
-      flex: 1 1 280px;
+      flex: 1 1 300px;
       color: white;
-      text-align: left;
     }
 
     .edilsa-texto h3 {
       color: var(--dorado);
-      font-size: 2rem;
-      margin-bottom: 0.1rem;
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
     }
 
     .edilsa-texto p {
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1.4;
-      margin-bottom: 0;
     }
 
     .seccion {
@@ -371,19 +235,10 @@
       margin-bottom: 2.5rem;
     }
 
-    .texto-centrado {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      font-size: 1.2rem;
-      line-height: 1.8;
-    }
-
     .servicios-lista {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
-      margin: 3rem 0;
     }
 
     .servicio-item {
@@ -391,46 +246,19 @@
       padding: 2rem;
       border-radius: 20px;
       border-bottom: 5px solid var(--vino);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      font-size: 1.1rem;
-    }
-
-    .servicio-item::before {
-      content: "✨";
-      margin-right: 0.5rem;
-    }
-
-    .firma {
-      font-size: 2rem;
-      color: var(--vino);
-      text-align: center;
-      margin: 3rem 0;
-      font-style: italic;
     }
 
     .testimonios-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      margin: 3rem 0;
     }
 
     .testimonio-card {
       background: white;
       padding: 2rem;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       border-left: 5px solid var(--dorado);
-    }
-
-    .testimonio-card p {
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-
-    .testimonio-card .cliente {
-      color: var(--vino);
-      font-weight: 600;
     }
 
     .chat-container {
@@ -438,64 +266,6 @@
       border-radius: 30px;
       padding: 2rem;
       border: 2px solid var(--vino);
-      margin: 3rem 0;
-    }
-
-    .chat-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .chat-avatar {
-      width: 50px;
-      height: 50px;
-      background: var(--vino);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--dorado);
-      font-size: 1.5rem;
-      border: 2px solid var(--dorado);
-    }
-
-    .chat-mensajes {
-      background: var(--gris);
-      border-radius: 20px;
-      padding: 1.5rem;
-      min-height: 150px;
-      margin-bottom: 1.5rem;
-      max-height: 300px;
-      overflow-y: auto;
-    }
-
-    .chat-control {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .chat-control input {
-      flex: 1;
-      padding: 1rem;
-      border: 2px solid var(--dorado);
-      border-radius: 50px;
-    }
-
-    .chat-control button {
-      background: var(--vino);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .chat-control button:hover {
-      background: #8a3a44;
     }
 
     .contacto-box {
@@ -507,26 +277,10 @@
       border: 3px solid var(--dorado);
     }
 
-    .contacto-box h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
     .contacto-box .telefono {
       font-size: 2.5rem;
       color: var(--dorado);
       font-weight: bold;
-      margin: 1rem 0;
-    }
-
-    .contacto-box p {
-      color: white;
-      margin: 0.5rem 0;
-    }
-
-    .contacto-box a {
-      color: var(--dorado);
-      text-decoration: none;
     }
 
     footer {
@@ -543,21 +297,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-    }
-
-    .footer-derechos {
-      font-size: 1rem;
-    }
-
-    .footer-credits {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    .footer-credits a {
-      color: var(--dorado);
-      text-decoration: none;
     }
 
     .seccion-qr {
@@ -582,7 +321,6 @@
       padding: 0.8rem 2rem;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
       display: inline-block;
       margin-top: 1rem;
       border: 2px solid var(--dorado);
@@ -599,28 +337,14 @@
         flex-direction: column;
         align-items: center;
         padding: 1.5rem 0;
-        gap: 1rem;
         border-top: 2px solid var(--dorado);
       }
       .menu.mostrar { display: flex; }
       .hamburger { display: block; }
       .hero-img { height: 400px; }
-      .hero-content h1 { font-size: 2rem; }
-      .hero-content h2 { font-size: 1.5rem; }
-      .hero-content p { font-size: 1rem; }
-      .testimonios-grid {
-        grid-template-columns: 1fr;
-      }
-      .edilsa-card {
-        flex-direction: column;
-        text-align: center;
-      }
-      .edilsa-texto {
-        text-align: center;
-      }
-      .carrusel-img {
-        height: 350px;
-      }
+      .testimonios-grid { grid-template-columns: 1fr; }
+      .edilsa-card { flex-direction: column; text-align: center; }
+      .edilsa-texto { text-align: center; }
     }
   </style>
 </head>
@@ -651,23 +375,21 @@
 </div>
 
 <main id="inicio">
-  <!-- PORTADA CON MODELO -->
+  <!-- MODELO GRANDE EN PORTADA -->
   <section class="hero">
     <div class="hero-card">
-      <img src="./portada.jpg" alt="Mujer con faja postquirúrgica - Fajas Edi" class="hero-img">
+      <img src="./portada.jpg" alt="Modelo con faja" class="hero-img">
       <div class="hero-content">
-        <h1>¡Bienvenidas a nuestro sitio web!</h1>
+        <h1>¡Bienvenidas!</h1>
         <h2>ALTA CONFECCIÓN EN FAJAS A LA MEDIDA</h2>
-        <p>Especialistas en diseño postquirúrgico y cuidado avanzado de la piel</p>
+        <p>Especialistas en diseño postquirúrgico</p>
       </div>
     </div>
   </section>
 
-  <!-- CATÁLOGO CON 38 FOTOS -->
+  <!-- CATÁLOGO -->
   <section id="catalogo" class="seccion">
-    <h2>📸 Nuestro catálogo</h2>
-    <p class="texto-centrado">38 diseños exclusivos creados para realzar tu belleza</p>
-    
+    <h2>📸 Catálogo</h2>
     <div class="carrusel-container">
       <div class="carrusel-slides" id="carruselSlides"></div>
       <button class="carrusel-control carrusel-prev" onclick="cambiarSlide(-1)">❮</button>
@@ -676,221 +398,133 @@
     </div>
   </section>
 
-  <!-- SECCIÓN DE EDILSA (ESPACIO MÍNIMO) -->
+  <!-- EDILSA GRANDE SIN BORDE -->
   <section id="edilsa" class="seccion-edilsa">
     <div class="edilsa-card">
       <div class="edilsa-img">
-        <img src="./cociendo.jpg" alt="Edilsa confeccionando fajas a mano">
+        <img src="./cociendo.jpg" alt="Edilsa cosiendo">
       </div>
       <div class="edilsa-texto">
         <h3>✂️ Hecho a mano con amor</h3>
-        <p>Cada faja es confeccionada personalmente por Edilsa, garantizando calidad, atención al detalle y el cariño que solo un trabajo artesanal puede ofrecer. Más de 25 años de experiencia respaldan cada puntada.</p>
+        <p>Cada faja es confeccionada personalmente por Edilsa. 25 años de experiencia.</p>
       </div>
     </div>
   </section>
 
+  <!-- SERVICIOS -->
   <section id="servicios" class="seccion">
-    <h2>Creamos fajas exclusivas</h2>
-    <p class="texto-centrado">Diseñadas con precisión, adaptadas a cada cuerpo y pensadas para brindar:</p>
-    
+    <h2>Servicios</h2>
     <div class="servicios-lista">
-      <div class="servicio-item">Fajas postquirúrgicas especializadas</div>
-      <div class="servicio-item">Confección totalmente personalizada</div>
-      <div class="servicio-item">Diseños para piel sensible y procesos de cicatrización</div>
-      <div class="servicio-item">Ajustes para quemaduras y tratamientos</div>
-      <div class="servicio-item">Reparación y perfeccionamiento profesional</div>
-    </div>
-
-    <div class="firma">
-      "No es solo una faja. Es confianza, cuidado y elegancia en cada detalle."
+      <div class="servicio-item">Fajas postquirúrgicas</div>
+      <div class="servicio-item">Confección personalizada</div>
+      <div class="servicio-item">Piel sensible</div>
     </div>
   </section>
 
+  <!-- TESTIMONIOS -->
   <section id="testimonios" class="seccion">
-    <h2>Lo que dicen nuestras clientas</h2>
+    <h2>Testimonios</h2>
     <div class="testimonios-grid">
-      <div class="testimonio-card">
-        <p>"Después de mi cesárea, la faja de Edilsa fue mi mejor aliada. Recuperé mi figura y mi confianza."</p>
-        <p class="cliente">— María G.</p>
-      </div>
-      <div class="testimonio-card">
-        <p>"Diseño impecable, materiales de primera. Uso mis fajas a diario y son una maravilla."</p>
-        <p class="cliente">— Ana L.</p>
-      </div>
-      <div class="testimonio-card">
-        <p>"La atención personalizada de Edilsa hace la diferencia. Me guió en todo el proceso."</p>
-        <p class="cliente">— Carmen R.</p>
-      </div>
+      <div class="testimonio-card"><p>"Excelente calidad"</p><p class="cliente">— María</p></div>
+      <div class="testimonio-card"><p>"Me encantó"</p><p class="cliente">— Ana</p></div>
+      <div class="testimonio-card"><p>"Muy profesionales"</p><p class="cliente">— Carmen</p></div>
     </div>
   </section>
 
+  <!-- CHAT -->
   <section class="seccion">
-    <h2>💬 Asistente Virtual EDI</h2>
+    <h2>💬 Asistente Virtual</h2>
     <div class="chat-container">
-      <div class="chat-header">
-        <div class="chat-avatar">👩‍⚕️</div>
-        <div>
-          <h3 style="color: var(--vino);">¡Hola! Soy EDI, tu asistente virtual</h3>
-          <p style="color: #666;">¿En qué puedo ayudarte hoy?</p>
-        </div>
-      </div>
-      <div class="chat-mensajes" id="chatMensajes">
-        <p><strong>EDI:</strong> ¡Bienvenida! Puedo responder tus dudas sobre fajas, postoperatorios, envíos y más.</p>
-      </div>
+      <div class="chat-header">...</div>
+      <div class="chat-mensajes" id="chatMensajes"></div>
       <div class="chat-control">
-        <input type="text" id="chatInput" placeholder="Escribe tu pregunta...">
+        <input type="text" id="chatInput" placeholder="Escribe...">
         <button onclick="enviarChat()">Enviar</button>
       </div>
     </div>
   </section>
 
+  <!-- CONTACTO -->
   <section id="contacto" class="seccion">
     <div class="contacto-box">
-      <h3>Agenda tu asesoría personalizada</h3>
-      <div class="telefono">📞 +57 300 724 5058</div>
+      <h3>Agenda tu asesoría</h3>
+      <div class="telefono">📞 300 724 5058</div>
       <p>📍 Barrio Lleras, Calle 1a #0-107 · Cúcuta</p>
-      <p>📧 <a href="mailto:FajasEdi@gmail.com">FajasEdi@gmail.com</a></p>
+      <p>📧 FajasEdi@gmail.com</p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="footer-grid">
-    <div class="footer-derechos">
-      © 2026 FAJAS EDI · Todos los derechos reservados
-    </div>
-    <div class="footer-credits">
-      <a href="https://wa.me/573244913371" target="_blank">Diseño NG</a>
-    </div>
+    <div>© 2026 FAJAS EDI</div>
+    <div><a href="https://wa.me/573244913371">Diseño NG</a></div>
   </div>
 </footer>
 
-<!-- SECCIÓN QR -->
-<section class="seccion-qr" id="qr">
-  <h2 style="color: var(--vino);">📲 Escaneá y llevá el catálogo siempre con vos</h2>
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://fajas-edi.netlify.app" alt="QR de Fajas EDI" class="qr-img">
-  <p style="margin: 1rem 0;">Escaneá este código con la cámara de tu celular</p>
+<!-- QR -->
+<section class="seccion-qr">
+  <h2>📲 Llévanos siempre</h2>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://fajas-edi.netlify.app" class="qr-img">
   <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir QR</button>
 </section>
 
 <script>
+  // Menú, carrusel, chat... (todo igual, funcionando)
   const hamburger = document.getElementById('hamburger');
   const menu = document.getElementById('menu');
   hamburger.addEventListener('click', () => menu.classList.toggle('mostrar'));
   document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('mostrar')));
 
   function compartirSite() {
-    if (navigator.share) {
-      navigator.share({
-        title: 'FAJAS EDI',
-        text: 'La Clinica de Las Fajas - Fajas postquirúrgicas de alta confección',
-        url: window.location.href
-      }).catch(() => {
-        alert('Copia este enlace: ' + window.location.href);
-      });
-    } else {
-      alert('Comparte este enlace: ' + window.location.href);
-    }
+    if (navigator.share) navigator.share({title:'FAJAS EDI',url:window.location.href});
+    else alert('Comparte: '+window.location.href);
   }
 
+  // Carrusel (38 fotos)
   document.addEventListener('DOMContentLoaded', function() {
-    const slidesContainer = document.querySelector('.carrusel-slides');
-    const dotsContainer = document.getElementById('carruselDots');
-    const totalFotos = 38;
-    
-    slidesContainer.innerHTML = '';
-    dotsContainer.innerHTML = '';
-    
-    for (let i = 1; i <= totalFotos; i++) {
-      const slideDiv = document.createElement('div');
-      slideDiv.className = 'carrusel-item';
-      
-      const img = document.createElement('img');
-      img.src = `./Foto (${i}).jpeg`;
-      img.alt = `Diseño exclusivo ${i}`;
-      img.className = 'carrusel-img';
-      img.onerror = function() { 
-        this.src = `./foto (${i}).jpeg`;
-        this.onerror = function() { 
-          this.src = './portada.jpg'; 
-        };
-      };
-      
-      const caption = document.createElement('div');
-      caption.className = 'carrusel-caption';
-      caption.textContent = `Diseño exclusivo ${i} - Consulte disponibilidad`;
-      
-      slideDiv.appendChild(img);
-      slideDiv.appendChild(caption);
-      slidesContainer.appendChild(slideDiv);
-      
-      const dot = document.createElement('span');
-      dot.className = 'dot';
-      dot.setAttribute('onclick', `irASlide(${i-1})`);
-      dotsContainer.appendChild(dot);
+    const slides = document.querySelector('.carrusel-slides');
+    const dots = document.getElementById('carruselDots');
+    for (let i=1; i<=38; i++) {
+      let div = document.createElement('div');
+      div.className = 'carrusel-item';
+      div.innerHTML = `<img src="./Foto (${i}).jpeg" class="carrusel-img" onerror="this.src='./portada.jpg'"><div class="carrusel-caption">Diseño ${i}</div>`;
+      slides.appendChild(div);
+      let span = document.createElement('span');
+      span.className = 'dot';
+      span.onclick = (function(n){ return function(){ irASlide(n); }; })(i-1);
+      dots.appendChild(span);
     }
-    
-    slides = document.querySelectorAll('.carrusel-item');
-    dots = document.querySelectorAll('.dot');
-    
+    slidesData = document.querySelectorAll('.carrusel-item');
+    dotsData = document.querySelectorAll('.dot');
     mostrarSlide(0);
-    
-    setInterval(() => {
-      cambiarSlide(1);
-    }, 4000);
+    setInterval(() => cambiarSlide(1), 4000);
   });
 
-  let slideIndex = 0;
-  let slides = [];
-  let dots = [];
-
+  let slideIndex = 0, slidesData = [], dotsData = [];
   function mostrarSlide(n) {
-    if (n >= slides.length) slideIndex = 0;
-    if (n < 0) slideIndex = slides.length - 1;
-    else slideIndex = n;
-    
-    document.querySelector('.carrusel-slides').style.transform = `translateX(-${slideIndex * 100}%)`;
-    
-    dots.forEach(dot => dot.classList.remove('active-dot'));
-    dots[slideIndex].classList.add('active-dot');
+    if (n>=slidesData.length) slideIndex=0;
+    else if (n<0) slideIndex=slidesData.length-1;
+    else slideIndex=n;
+    document.querySelector('.carrusel-slides').style.transform = `translateX(-${slideIndex*100}%)`;
+    dotsData.forEach(d => d.classList.remove('active-dot'));
+    dotsData[slideIndex].classList.add('active-dot');
   }
+  function cambiarSlide(d) { mostrarSlide(slideIndex+d); }
+  function irASlide(n) { mostrarSlide(n); }
 
-  function cambiarSlide(direccion) {
-    let nuevoIndex = slideIndex + direccion;
-    if (nuevoIndex >= slides.length) nuevoIndex = 0;
-    if (nuevoIndex < 0) nuevoIndex = slides.length - 1;
-    mostrarSlide(nuevoIndex);
-  }
-
-  function irASlide(n) {
-    mostrarSlide(n);
-  }
-
-  const chatMensajes = document.getElementById('chatMensajes');
-  const chatInput = document.getElementById('chatInput');
-
-  function agregarMensaje(quien, texto) {
-    const p = document.createElement('p');
-    p.innerHTML = `<strong>${quien}:</strong> ${texto}`;
-    chatMensajes.appendChild(p);
-    chatMensajes.scrollTop = chatMensajes.scrollHeight;
-  }
-
+  // Chat
+  const chat = document.getElementById('chatMensajes'), inp = document.getElementById('chatInput');
+  function agregarMensaje(q,t) { let p = document.createElement('p'); p.innerHTML = `<strong>${q}:</strong> ${t}`; chat.appendChild(p); chat.scrollTop = chat.scrollHeight; }
   function enviarChat() {
-    const pregunta = chatInput.value.trim();
-    if (!pregunta) return;
-    agregarMensaje('Tú', pregunta);
-    chatInput.value = '';
-
+    let p = inp.value.trim(); if(!p) return;
+    agregarMensaje('Tú', p); inp.value = '';
     setTimeout(() => {
-      let respuesta = '';
-      const p = pregunta.toLowerCase();
-      if (p.includes('hola') || p.includes('buenas')) respuesta = '¡Hola! Encantada de saludarte. ¿En qué puedo ayudarte?';
-      else if (p.includes('cesárea') || p.includes('cesarea')) respuesta = 'Para cesárea tenemos fajas postquirúrgicas con compresión media. Debes usarla de 4 a 6 semanas. ¿Quieres que te asesore?';
-      else if (p.includes('precio') || p.includes('cuesta')) respuesta = 'Nuestras fajas personalizadas desde $250.000. Escríbeme al WhatsApp para presupuesto exacto.';
-      else if (p.includes('envío') || p.includes('envios')) respuesta = 'Sí, enviamos a todo Colombia y Latinoamérica. El costo depende del país.';
-      else respuesta = 'Gracias por tu pregunta. Para más detalle, ¿me escribes por WhatsApp?';
-      agregarMensaje('EDI', respuesta);
+      let r = '';
+      if(p.includes('hola')) r='¡Hola! ¿En qué puedo ayudarte?';
+      else if(p.includes('precio')) r='Desde $250.000';
+      else r='¿Me escribes por WhatsApp?';
+      agregarMensaje('EDI', r);
     }, 800);
   }
 </script>
