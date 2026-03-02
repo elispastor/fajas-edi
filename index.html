@@ -200,7 +200,6 @@
       margin: 0 auto;
     }
 
-    /* CARRUSEL */
     .carrusel-container {
       position: relative;
       max-width: 900px;
@@ -304,57 +303,51 @@
       transform: scale(1.3);
     }
 
-    /* SECCIÓN EDILSA */
     .seccion-edilsa {
       max-width: 1200px;
-      margin: 0.5rem auto;
+      margin: 1rem auto;
       padding: 0 1rem;
     }
 
     .edilsa-card {
       background: linear-gradient(135deg, var(--vino) 0%, #5a2a30 100%);
       border-radius: 40px;
-      padding: 0.8rem 1.5rem;
+      padding: 1rem 2rem;
       border: 3px solid var(--dorado);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.8rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
     .edilsa-img {
-      flex: 1 1 250px;
+      flex: 1 1 280px;
       text-align: center;
     }
 
     .edilsa-img img {
       max-width: 100%;
-      height: auto;
-      max-height: 280px;
+      max-height: 320px;
       border-radius: 20px;
       border: 3px solid var(--dorado);
       object-fit: cover;
-      display: block;
-      margin-bottom: 0;
     }
 
     .edilsa-texto {
-      flex: 1 1 280px;
+      flex: 1 1 300px;
       color: white;
-      text-align: left;
     }
 
     .edilsa-texto h3 {
       color: var(--dorado);
-      font-size: 2rem;
-      margin-bottom: 0.2rem;
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
     }
 
     .edilsa-texto p {
       font-size: 1.1rem;
       line-height: 1.4;
-      margin-bottom: 0;
     }
 
     .seccion {
@@ -652,7 +645,6 @@
 </div>
 
 <main id="inicio">
-  <!-- PORTADA CON MODELO -->
   <section class="hero">
     <div class="hero-card">
       <img src="./portada.jpg" alt="Mujer con faja postquirúrgica - Fajas Edi" class="hero-img">
@@ -664,7 +656,6 @@
     </div>
   </section>
 
-  <!-- CATÁLOGO CON 38 FOTOS -->
   <section id="catalogo" class="seccion">
     <h2>📸 Nuestro catálogo</h2>
     <p class="texto-centrado">38 diseños exclusivos creados para realzar tu belleza</p>
@@ -677,7 +668,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN DE EDILSA -->
   <section id="edilsa" class="seccion-edilsa">
     <div class="edilsa-card">
       <div class="edilsa-img">
@@ -766,7 +756,6 @@
   </div>
 </footer>
 
-<!-- SECCIÓN QR -->
 <section class="seccion-qr" id="qr">
   <h2 style="color: var(--vino);">📲 Escaneá y llevá el catálogo siempre con vos</h2>
   <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://fajasedi.netlify.app" alt="QR de Fajas EDI" class="qr-img">
