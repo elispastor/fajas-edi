@@ -78,7 +78,6 @@
       color: var(--dorado);
     }
 
-    /* Botón QUIERO MI TARJETA en el menú (sutil pero visible) */
     .menu .btn-tarjeta-menu {
       background: var(--dorado);
       color: var(--vino);
@@ -102,29 +101,32 @@
       cursor: pointer;
     }
 
-    /* Botón compartir flotante */
-    .compartir-flotante {
+    /* Botón compartir NUEVO (más decente) */
+    .btn-compartir {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      background: var(--dorado);
-      color: var(--vino);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      background: var(--vino);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 99;
+      border: 2px solid var(--dorado);
+      cursor: pointer;
+      transition: all 0.3s;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      cursor: pointer;
-      z-index: 99;
-      border: 2px solid white;
-      transition: transform 0.3s;
+      gap: 0.5rem;
+      font-size: 1rem;
     }
 
-    .compartir-flotante:hover {
-      transform: scale(1.1);
+    .btn-compartir:hover {
+      background: var(--dorado);
+      color: var(--vino);
+      transform: scale(1.05);
     }
 
     .hero {
@@ -142,10 +144,13 @@
 
     .hero-img {
       width: 100%;
-      height: 450px;
-      object-fit: cover;
-      object-position: 50% 30%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      object-position: center;
       border-bottom: 3px solid var(--dorado);
+      padding: 1rem 0;
+      background: #5a2a30;
     }
 
     .hero-content {
@@ -241,7 +246,6 @@
       font-style: italic;
     }
 
-    /* TESTIMONIOS */
     .testimonios-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -267,29 +271,11 @@
       font-weight: 600;
     }
 
-    /* GALERÍA */
+    /* GALERÍA OCULTA TEMPORALMENTE */
     .galeria-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin: 3rem 0;
+      display: none;
     }
 
-    .galeria-item {
-      background: var(--gris);
-      border-radius: 15px;
-      overflow: hidden;
-      aspect-ratio: 1;
-      border: 2px solid var(--dorado);
-    }
-
-    .galeria-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* CHAT BOT */
     .chat-container {
       background: white;
       border-radius: 30px;
@@ -416,11 +402,11 @@
       }
       .menu.mostrar { display: flex; }
       .hamburger { display: block; }
-      .hero-img { height: 250px; }
+      .hero-img { height: auto; }
       .hero-content h1 { font-size: 2rem; }
       .hero-content h2 { font-size: 1.5rem; }
       .contacto-box .telefono { font-size: 1.8rem; }
-      .testimonios-grid, .galeria-grid {
+      .testimonios-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -436,16 +422,15 @@
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#testimonios">Testimonios</a></li>
-      <li><a href="#galeria">Galería</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="https://wa.me/573244913371?text=Hola,%20quiero%20mi%20tarjeta%20como%20FAJAS%20EDI" class="btn-tarjeta-menu">💳 QUIERO MI TARJETA</a></li>
     </ul>
   </div>
 </header>
 
-<!-- Botón flotante para compartir -->
-<div class="compartir-flotante" onclick="compartirSite()" title="Compartir este sitio">
-  📢
+<!-- Nuevo botón compartir decente -->
+<div class="btn-compartir" onclick="compartirSite()">
+  <span>📢</span> Compartir sitio
 </div>
 
 <main id="inicio">
@@ -495,14 +480,10 @@
     </div>
   </section>
 
-  <section id="galeria" class="seccion">
+  <!-- Galería oculta -->
+  <section id="galeria" class="seccion" style="display: none;">
     <h2>Galería de resultados</h2>
-    <div class="galeria-grid">
-      <div class="galeria-item" style="background: #ddd;">📸</div>
-      <div class="galeria-item" style="background: #ddd;">📸</div>
-      <div class="galeria-item" style="background: #ddd;">📸</div>
-      <div class="galeria-item" style="background: #ddd;">📸</div>
-    </div>
+    <div class="galeria-grid"></div>
   </section>
 
   <section class="seccion">
@@ -563,9 +544,11 @@
         title: 'FAJAS EDI',
         text: 'La elegancia en cada curva - Fajas postquirúrgicas de alta confección',
         url: window.location.href
+      }).catch(() => {
+        alert('Copia este enlace: ' + window.location.href);
       });
     } else {
-      alert('¡Comparte este enlace: ' + window.location.href);
+      alert('Comparte este enlace: ' + window.location.href);
     }
   }
 
