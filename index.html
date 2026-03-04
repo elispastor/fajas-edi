@@ -11,19 +11,19 @@
       box-sizing: border-box;
     }
 
-   :root {
-  --principal: #4a2c1a;      /* Marrón oscuro para textos importantes */
-  --fondo: #f5e8d9;          /* Beige claro de fondo */
-  --acento: #b86b4d;         /* Terracota para botones y detalles */
-  --dorado: #c9a87c;         /* Dorado suave para elegancia */
-  --blanco: #ffffff;         /* Blanco para fondos de tarjetas */
-  --texto: #2c2c2c;          /* Texto general (casi negro suave) */
-}
+    :root {
+      --principal: #4a2c1a;      /* Marrón oscuro para textos importantes */
+      --fondo: #f5e8d9;          /* Beige claro de fondo */
+      --acento: #b86b4d;         /* Terracota para botones y detalles */
+      --dorado: #c9a87c;         /* Dorado suave para elegancia */
+      --blanco: #ffffff;         /* Blanco para fondos de tarjetas */
+      --texto-oscuro: #2c2c2c;   /* Texto general */
+    }
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: var(--crema);
-      color: #2c2c2c;
+      background: var(--fondo);
+      color: var(--texto-oscuro);
       scroll-behavior: smooth;
     }
 
@@ -34,7 +34,7 @@
     }
 
     header {
-      background: var(--vino);
+      background: var(--principal);
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
@@ -46,24 +46,12 @@
       font-size: 1.8rem;
       font-weight: 700;
       color: var(--dorado);
-      animation: neon 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes neon {
-      from {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--dorado), 0 0 20px var(--dorado);
-      }
-      to {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--dorado), 0 0 40px var(--dorado);
-      }
     }
 
     .logo span {
       font-size: 0.9rem;
       color: white;
       display: block;
-      text-shadow: none;
-      animation: none;
     }
 
     .nav-container {
@@ -93,17 +81,17 @@
     }
 
     .menu .btn-tarjeta-menu {
-      background: var(--dorado);
-      color: var(--vino);
+      background: var(--acento);
+      color: white;
       padding: 0.5rem 1.2rem;
       border-radius: 30px;
       font-weight: 600;
-      border: 1px solid white;
+      border: 1px solid var(--dorado);
     }
 
     .menu .btn-tarjeta-menu:hover {
       background: white;
-      color: var(--vino);
+      color: var(--principal);
     }
 
     .hamburger {
@@ -126,7 +114,7 @@
     }
 
     .btn-personalizado {
-      background: var(--vino);
+      background: var(--acento);
       color: white;
       padding: 1rem 2rem;
       border-radius: 10px;
@@ -142,7 +130,7 @@
 
     .btn-personalizado:hover {
       background: var(--dorado);
-      color: var(--vino);
+      color: var(--principal);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
@@ -164,7 +152,7 @@
     }
 
     .hero-card {
-      background: linear-gradient(135deg, var(--vino) 0%, #5a2a30 100%);
+      background: var(--principal);
       border-radius: 40px;
       overflow: hidden;
       border: 3px solid var(--dorado);
@@ -181,6 +169,7 @@
     .hero-content {
       padding: 2rem;
       text-align: center;
+      color: white;
     }
 
     .hero-content h1 {
@@ -209,7 +198,7 @@
       overflow: hidden;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      background: var(--vino);
+      background: var(--principal);
     }
 
     .carrusel-slides {
@@ -234,7 +223,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(114,47,55,0.95));
+      background: linear-gradient(transparent, rgba(74,44,26,0.95));
       color: white;
       padding: 2rem 1rem;
       text-align: center;
@@ -245,8 +234,8 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: var(--dorado);
-      color: var(--vino);
+      background: var(--acento);
+      color: white;
       border: none;
       width: 45px;
       height: 45px;
@@ -256,12 +245,13 @@
       transition: all 0.3s;
       z-index: 10;
       opacity: 0.8;
-      border: 2px solid white;
+      border: 2px solid var(--dorado);
     }
 
     .carrusel-control:hover {
       opacity: 1;
       background: white;
+      color: var(--principal);
       transform: translateY(-50%) scale(1.1);
     }
 
@@ -301,55 +291,59 @@
     }
 
     .active-dot {
-      background: var(--dorado);
+      background: var(--acento);
       transform: scale(1.3);
     }
 
     .seccion-edilsa {
       max-width: 1200px;
-      margin: 1rem auto;
+      margin: 2rem auto;
       padding: 0 1rem;
     }
 
     .edilsa-card {
-      background: linear-gradient(135deg, var(--vino) 0%, #5a2a30 100%);
+      background: var(--principal);
       border-radius: 40px;
-      padding: 1rem 2rem;
+      padding: 2rem;
       border: 3px solid var(--dorado);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      gap: 2rem;
       flex-wrap: wrap;
     }
 
     .edilsa-img {
-      flex: 1 1 280px;
+      flex: 1 1 350px;
       text-align: center;
     }
 
     .edilsa-img img {
-      max-width: 100%;
-      max-height: 320px;
+      width: 100%;
+      max-width: 450px;
+      height: auto;
       border-radius: 20px;
-      border: 3px solid var(--dorado);
+      border: 4px solid var(--dorado);
       object-fit: cover;
+      display: block;
+      margin: 0 auto;
     }
 
     .edilsa-texto {
-      flex: 1 1 300px;
+      flex: 1 1 350px;
       color: white;
     }
 
     .edilsa-texto h3 {
       color: var(--dorado);
       font-size: 2.2rem;
-      margin-bottom: 0.3rem;
+      margin-bottom: 1rem;
     }
 
     .edilsa-texto p {
       font-size: 1.1rem;
-      line-height: 1.4;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     .seccion {
@@ -359,7 +353,7 @@
     }
 
     .seccion h2 {
-      color: var(--vino);
+      color: var(--principal);
       font-size: 2.5rem;
       text-align: center;
       border-bottom: 3px solid var(--dorado);
@@ -373,6 +367,7 @@
       margin: 0 auto 2rem;
       font-size: 1.2rem;
       line-height: 1.8;
+      color: var(--texto-oscuro);
     }
 
     .servicios-lista {
@@ -383,12 +378,13 @@
     }
 
     .servicio-item {
-      background: white;
+      background: var(--blanco);
       padding: 2rem;
       border-radius: 20px;
-      border-bottom: 5px solid var(--vino);
+      border-bottom: 5px solid var(--acento);
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       font-size: 1.1rem;
+      color: var(--texto-oscuro);
     }
 
     .servicio-item::before {
@@ -398,7 +394,7 @@
 
     .firma {
       font-size: 2rem;
-      color: var(--vino);
+      color: var(--principal);
       text-align: center;
       margin: 3rem 0;
       font-style: italic;
@@ -412,7 +408,7 @@
     }
 
     .testimonio-card {
-      background: white;
+      background: var(--blanco);
       padding: 2rem;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -422,18 +418,19 @@
     .testimonio-card p {
       font-style: italic;
       margin-bottom: 1rem;
+      color: var(--texto-oscuro);
     }
 
     .testimonio-card .cliente {
-      color: var(--vino);
+      color: var(--principal);
       font-weight: 600;
     }
 
     .chat-container {
-      background: white;
+      background: var(--blanco);
       border-radius: 30px;
       padding: 2rem;
-      border: 2px solid var(--vino);
+      border: 2px solid var(--principal);
       margin: 3rem 0;
     }
 
@@ -447,18 +444,18 @@
     .chat-avatar {
       width: 50px;
       height: 50px;
-      background: var(--vino);
+      background: var(--acento);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--dorado);
+      color: white;
       font-size: 1.5rem;
       border: 2px solid var(--dorado);
     }
 
     .chat-mensajes {
-      background: var(--gris);
+      background: var(--fondo);
       border-radius: 20px;
       padding: 1.5rem;
       min-height: 150px;
@@ -480,7 +477,7 @@
     }
 
     .chat-control button {
-      background: var(--vino);
+      background: var(--acento);
       color: white;
       padding: 1rem 2rem;
       border: none;
@@ -491,11 +488,11 @@
     }
 
     .chat-control button:hover {
-      background: #8a3a44;
+      background: #9a5a3d;
     }
 
     .contacto-box {
-      background: var(--vino);
+      background: var(--principal);
       color: white;
       padding: 3rem;
       border-radius: 40px;
@@ -506,6 +503,7 @@
     .contacto-box h3 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: var(--dorado);
     }
 
     .contacto-box .telefono {
@@ -526,7 +524,7 @@
     }
 
     footer {
-      background: var(--vino);
+      background: var(--principal);
       color: white;
       padding: 3rem 1rem;
       margin-top: 4rem;
@@ -544,6 +542,7 @@
 
     .footer-derechos {
       font-size: 1rem;
+      color: white;
     }
 
     .footer-credits {
@@ -560,10 +559,14 @@
       max-width: 600px;
       margin: 4rem auto;
       padding: 2rem;
-      background: white;
+      background: var(--blanco);
       border: 3px solid var(--dorado);
       border-radius: 40px;
       text-align: center;
+    }
+
+    .seccion-qr h2 {
+      color: var(--principal);
     }
 
     .qr-img {
@@ -573,7 +576,7 @@
     }
 
     .btn-imprimir {
-      background: var(--vino);
+      background: var(--acento);
       color: white;
       padding: 0.8rem 2rem;
       border-radius: 30px;
@@ -591,7 +594,7 @@
         top: 90px;
         left: 0;
         width: 100%;
-        background: var(--vino);
+        background: var(--principal);
         flex-direction: column;
         align-items: center;
         padding: 1.5rem 0;
@@ -610,6 +613,7 @@
       .edilsa-card {
         flex-direction: column;
         text-align: center;
+        padding: 1.5rem;
       }
       .edilsa-texto {
         text-align: center;
@@ -637,47 +641,7 @@
     </ul>
   </div>
 </header>
-<!-- ===== SECCIÓN DESTACADA: EDILSA (LA MODELO) ===== -->
-<section style="max-width: 1200px; margin: 1rem auto; padding: 0 1rem;">
-  <div style="background: linear-gradient(135deg, var(--vino) 0%, #5a2a30 100%); border-radius: 40px; padding: 2rem; border: 3px solid var(--dorado);">
-    
-    <!-- Mensaje de bienvenida -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <h2 style="color: var(--dorado); font-size: 2.8rem; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-        ✨ BIENVENID@S a nuestro sitio web ✨
-      </h2>
-      <p style="color: white; font-size: 1.3rem;">Conoce a nuestra fundadora</p>
-    </div>
-    
-    <!-- Contenido: imagen modelo + texto -->
-    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
-      
-      <!-- Imagen de Edilsa (modelo.jpg) -->
-      <div style="flex: 1 1 300px; text-align: center;">
-        <img src="./modelo.jpg" alt="Edilsa - Fundadora de Fajas EDI" 
-             style="max-width: 100%; max-height: 450px; border-radius: 30px; border: 4px solid var(--dorado); object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-      </div>
-      
-      <!-- Texto sobre Edilsa -->
-      <div style="flex: 1 1 300px; color: white;">
-        <h3 style="color: var(--dorado); font-size: 2.2rem; margin-bottom: 1rem;">✂️ Hecho a mano con amor</h3>
-        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;">
-          Detrás de cada faja hay una historia de dedicación. <strong style="color: var(--dorado);">Edilsa</strong>, 
-          nuestra fundadora, confecciona personalmente cada pieza con más de 25 años de experiencia.
-        </p>
-        <p style="font-size: 1.1rem; line-height: 1.6;">
-          Su pasión por el diseño y el cuidado de la mujer se refleja en cada puntada, 
-          garantizando calidad, confort y resultados excepcionales.
-        </p>
-        <div style="margin-top: 1.5rem;">
-          <a href="#edilsa" style="background: var(--dorado); color: var(--vino); padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block;">Conoce más sobre su trabajo</a>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-</section>
-<!-- ===== FIN SECCIÓN EDILSA ===== -->
+
 <div class="seccion-botones">
   <a href="https://wa.me/573007245058" class="btn-personalizado">📱 WhatsApp</a>
   <a href="tel:+573007245058" class="btn-personalizado">📞 Llamar</a>
@@ -709,19 +673,7 @@
       <div class="carrusel-dots" id="carruselDots"></div>
     </div>
   </section>
-<!-- ===== MENSAJE DE BIENVENIDA AGREGADO ===== -->
-<section class="seccion" style="margin-bottom: 0; padding-bottom: 0;">
-  <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-    <h2 style="color: var(--dorado); font-size: 2.8rem; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
-      ✨ BIENVENID@S a nuestro sitio web ✨
-    </h2>
-    <p style="color: var(--vino); font-size: 1.3rem; font-weight: 500;">
-      Conoce a nuestra fundadora y el arte detrás de cada faja
-    </p>
-    <div style="width: 100px; height: 3px; background: var(--dorado); margin: 1rem auto;"></div>
-  </div>
-</section>
-<!-- ===== FIN MENSAJE DE BIENVENIDA ===== -->
+
   <section id="edilsa" class="seccion-edilsa">
     <div class="edilsa-card">
       <div class="edilsa-img">
@@ -775,8 +727,8 @@
       <div class="chat-header">
         <div class="chat-avatar">👩‍⚕️</div>
         <div>
-          <h3 style="color: var(--vino);">¡Hola! Soy EDI, tu asistente virtual</h3>
-          <p style="color: #666;">¿En qué puedo ayudarte hoy?</p>
+          <h3 style="color: var(--principal);">¡Hola! Soy EDI, tu asistente virtual</h3>
+          <p style="color: var(--texto-oscuro);">¿En qué puedo ayudarte hoy?</p>
         </div>
       </div>
       <div class="chat-mensajes" id="chatMensajes">
@@ -811,7 +763,7 @@
 </footer>
 
 <section class="seccion-qr" id="qr">
-  <h2 style="color: var(--vino);">📲 Escaneá y llevá el catálogo siempre con vos</h2>
+  <h2>📲 Escaneá y llevá el catálogo siempre con vos</h2>
   <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://fajasedi.netlify.app" alt="QR de Fajas EDI" class="qr-img">
   <p style="margin: 1rem 0;">Escaneá este código con la cámara de tu celular</p>
   <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir QR</button>
