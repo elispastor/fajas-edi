@@ -896,54 +896,9 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const slidesContainer = document.querySelector('.carrusel-slides');
-    const dotsContainer = document.getElementById('carruselDots');
-    const totalFotos = 38;
-    
-    slidesContainer.innerHTML = '';
-    dotsContainer.innerHTML = '';
-    
-    for (let i = 1; i <= totalFotos; i++) {
-      const slideDiv = document.createElement('div');
-      slideDiv.className = 'carrusel-item';
-      
-      const img = document.createElement('img');
-      img.src = `./Foto (${i}).jpeg`;
-      img.alt = `Diseño exclusivo ${i}`;
-      img.className = 'carrusel-img';
-      img.onerror = function() { 
-        this.src = `./foto (${i}).jpeg`;
-        this.onerror = function() { 
-          this.src = './portada.jpg'; 
-        };
-      };
-      
-      const caption = document.createElement('div');
-      caption.className = 'carrusel-caption';
-      caption.textContent = `Diseño exclusivo ${i} - Consulte disponibilidad`;
-      
-      slideDiv.appendChild(img);
-      slideDiv.appendChild(caption);
-      slidesContainer.appendChild(slideDiv);
-      
-      const dot = document.createElement('span');
-      dot.className = 'dot';
-      dot.setAttribute('onclick', `irASlide(${i-1})`);
-      dotsContainer.appendChild(dot);
-    }
-    
-    slides = document.querySelectorAll('.carrusel-item');
-    dots = document.querySelectorAll('.dot');
-    
-    mostrarSlide(0);
-    
-    setInterval(() => {
-      cambiarSlide(1);
-    }, 4000);
-  });
-
-  let slideIndex = 0;
+    }, 800);
+  }
+</script>
   let slides = [];
   let dots = [];
 
