@@ -739,8 +739,7 @@
 
   <section id="catalogo" class="seccion">
     <h2>📸 Nuestro catálogo</h2>
-    <p class="texto-centrado">38 diseños exclusivos creados para realzar tu belleza</p>
-    
+<p class="texto-centrado">46 diseños exclusivos creados para realzar tu belleza</p>    
     <div class="carrusel-container">
       <div class="carrusel-slides" id="carruselSlides"></div>
       <button class="carrusel-control carrusel-prev" onclick="cambiarSlide(-1)">❮</button>
@@ -869,73 +868,88 @@
   }
 
   // ===== CARRUSEL CON FAJAS PRIMERO =====
-  let slides = [];
-  let dots = [];
-  let slideIndex = 0;
+ // ===== CARRUSEL CON FAJAS PRIMERO =====
+let slides = [];
+let dots = [];
+let slideIndex = 0;
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const slidesContainer = document.querySelector('.carrusel-slides');
-    const dotsContainer = document.getElementById('carruselDots');
-    
-    slidesContainer.innerHTML = '';
-    dotsContainer.innerHTML = '';
+document.addEventListener('DOMContentLoaded', function() {
+  const slidesContainer = document.querySelector('.carrusel-slides');
+  const dotsContainer = document.getElementById('carruselDots');
+  
+  slidesContainer.innerHTML = '';
+  dotsContainer.innerHTML = '';
 
-    // 📌 Números de las fajas (las que van PRIMERO)
-    let fajas = [17, 11, 32, 38, 35, 14, 13, 23, 24, 28, 31, 16, 12, 18, 20, 33, 21, 22];
-    
-    // 📌 Resto de números del 1 al 38 (sin repetir los de fajas)
-    let resto = [];
-    for (let i = 1; i <= 38; i++) {
-      if (!fajas.includes(i)) {
-        resto.push(i);
-      }
+  // 📌 Números de las fajas (las que van PRIMERO)
+  let fajas = [17, 11, 32, 38, 35, 14, 13, 23, 24, 28, 31, 16, 12, 18, 20, 33, 21, 22];
+  
+  // 📌 Resto de números del 1 al 38 (sin repetir los de fajas)
+  let resto = [];
+  for (let i = 1; i <= 38; i++) {
+    if (!fajas.includes(i)) {
+      resto.push(i);
     }
+  }
 
-    // 📌 Orden final: primero fajas, luego resto
-    let ordenFinal = fajas.concat(resto);
+  // 📌 NUEVAS FOTOS (A1 a A8)
+  let nuevas = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8'];
 
-    // 📌 Crear slides en ese orden
-    for (let idx = 0; idx < ordenFinal.length; idx++) {
-      let i = ordenFinal[idx];
-      
-      const slideDiv = document.createElement('div');
-      slideDiv.className = 'carrusel-item';
-      
-      const img = document.createElement('img');
-      img.src = `./Foto (${i}).jpeg`;
-      img.alt = `Diseño exclusivo ${i}`;
-      img.className = 'carrusel-img';
+  // 📌 Orden final: primero fajas, luego resto, luego nuevas
+  let ordenFinal = fajas.concat(resto).concat(nuevas);
+
+  // 📌 Crear slides en ese orden
+  for (let idx = 0; idx < ordenFinal.length; idx++) {
+    let item = ordenFinal[idx];
+    
+    const slideDiv = document.createElement('div');
+    slideDiv.className = 'carrusel-item';
+    
+    const img = document.createElement('img');
+    
+    // Si es número, usa formato "Foto (X).jpeg"
+    if (typeof item === 'number') {
+      img.src = `./Foto (${item}).jpeg`;
+      img.alt = `Diseño exclusivo ${item}`;
       img.onerror = function() { 
-        this.src = `./foto (${i}).jpeg`;
+        this.src = `./foto (${item}).jpeg`;
         this.onerror = function() { 
           this.src = './portada.jpg'; 
         };
       };
-      
-      const caption = document.createElement('div');
-      caption.className = 'carrusel-caption';
-      caption.textContent = `Diseño exclusivo ${i} - Consulte disponibilidad`;
-      
-      slideDiv.appendChild(img);
-      slideDiv.appendChild(caption);
-      slidesContainer.appendChild(slideDiv);
-      
-      const dot = document.createElement('span');
-      dot.className = 'dot';
-      dot.setAttribute('onclick', `irASlide(${idx})`);
-      dotsContainer.appendChild(dot);
+    } else {
+      // Si es texto (A1, A2, etc.), usa ese nombre directamente
+      img.src = `./${item}.jpg`;
+      img.alt = `Diseño especial ${item}`;
+      img.onerror = function() { 
+        this.src = './portada.jpg'; 
+      };
     }
     
-    slides = document.querySelectorAll('.carrusel-item');
-    dots = document.querySelectorAll('.dot');
+    img.className = 'carrusel-img';
     
-    mostrarSlide(0);
+    const caption = document.createElement('div');
+    caption.className = 'carrusel-caption';
+    caption.textContent = `Diseño exclusivo ${item} - Consulte disponibilidad`;
     
-    setInterval(() => {
-      cambiarSlide(1);
-    }, 4000);
-  });
-
+    slideDiv.appendChild(img);
+    slideDiv.appendChild(caption);
+    slidesContainer.appendChild(slideDiv);
+    
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    dot.setAttribute('onclick', `irASlide(${idx})`);
+    dotsContainer.appendChild(dot);
+  }
+  
+  slides = document.querySelectorAll('.carrusel-item');
+  dots = document.querySelectorAll('.dot');
+  
+  mostrarSlide(0);
+  
+  setInterval(() => {
+    cambiarSlide(1);
+  }, 4000);
+});
   function mostrarSlide(n) {
     if (n >= slides.length) slideIndex = 0;
     if (n < 0) slideIndex = slides.length - 1;
